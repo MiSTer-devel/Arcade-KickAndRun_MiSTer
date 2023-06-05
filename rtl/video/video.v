@@ -202,7 +202,7 @@ always @(posedge clk_sys) begin
     blue <= pal_rom_data3;
     vram_clear <= 1'b1;
   end
-  else if (hc < 12 || hc > 248 || vcount < 17) begin
+  else if (hc < 11 || hc > 248 || vcount < 17) begin
     red <= 0;
     green <= 0;
     blue <= 0;
