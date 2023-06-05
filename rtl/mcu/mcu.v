@@ -35,12 +35,12 @@ reg [7:0] ddr2;
 reg [7:0] ddr3;
 reg [7:0] ddr4;
 
-always @* begin
+always @(posedge clk_sys) begin
   if (reset) begin
-    ddr1 = 8'd0;
-    ddr2 = 8'd0;
-    ddr3 = 8'd0;
-    ddr4 = 8'd0;
+    ddr1 <= 8'd0;
+    ddr2 <= 8'd0;
+    ddr3 <= 8'd0;
+    ddr4 <= 8'd0;
   end
   else begin
 
@@ -51,53 +51,53 @@ always @* begin
       // port 1 DDR
       16'd0:
         if (~mpu_rw)
-          ddr1 = mpu_dout;
+          ddr1 <= mpu_dout;
         else
-          prt_data = 8'hff;
+          prt_data <= 8'hff;
 
       // port 2 DDR
       16'd1:
         if (~mpu_rw)
-          ddr2 = mpu_dout;
+          ddr2 <= mpu_dout;
         else
-          prt_data = 8'hff;
+          prt_data <= 8'hff;
 
       // port 1 DR
       16'd2:
-        prt_data = mcu_p1;
+        prt_data <= mcu_p1;
 
       // port 2 DR
       16'd3: begin
         if (~mpu_rw) begin
-          mcu_p2 = mpu_dout;
-          prt_data = mcu_p3_i; // latch p3
+          mcu_p2 <= mpu_dout;
+          prt_data <= mcu_p3_i; // latch p3
         end
         else
-          prt_data = mcu_p2;
+          prt_data <= mcu_p2;
       end
 
       // port 3 DDR
       16'd4:
         if (~mpu_rw)
-          ddr3 = mpu_dout;
+          ddr3 <= mpu_dout;
         else
-          prt_data = 8'hff;
+          prt_data <= 8'hff;
 
       // port 4 DDR
       16'd5:
         if (~mpu_rw)
-          ddr4 = mpu_dout;
+          ddr4 <= mpu_dout;
         else
-          prt_data = 8'hff;
+          prt_data <= 8'hff;
 
       // port 3 DR - read/write - ext data bus
       16'd6:begin
-        if (~mpu_rw) mcu_p3_o = mpu_dout;
+        if (~mpu_rw) mcu_p3_o <= mpu_dout;
       end
 
       // port 4 DR - write only - ext address bus
       16'd7:
-        if (~mpu_rw) mcu_p4 = mpu_dout;
+        if (~mpu_rw) mcu_p4 <= mpu_dout;
 
     endcase
   end

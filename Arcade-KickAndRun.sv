@@ -255,17 +255,17 @@ hps_io #(.CONF_STR(CONF_STR)) hps_io
 
 ///////////////////////   CLOCKS   ///////////////////////////////
 
-wire clk_sys, locked;
+wire clk_sys;
 
 pll pll
 (
   .refclk(CLK_50M),
   .rst(0),
-  .outclk_0(clk_sys),
-  .locked(locked)
+  .outclk_0(clk_sys)
+  // .locked(locked)
 );
 
-wire reset = RESET | status[0] | buttons[1];
+wire reset = RESET | status[0] | buttons[1] | ioctl_download;
 
 
 ////////////////////

@@ -1,5 +1,6 @@
 
 set_global_assignment -name SYSTEMVERILOG_FILE Arcade-KickAndRun.sv
+set_global_assignment -name SDC_FILE "Arcade-KickAndRun.sdc"
 set_global_assignment -name VERILOG_FILE rtl/addr_decode.v
 set_global_assignment -name VERILOG_FILE rtl/core.v
 set_global_assignment -name QIP_FILE rtl/pll.qip

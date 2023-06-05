@@ -30,8 +30,6 @@ assign mcpu_rd = ~mcpu_rd_n;
 
 clk_en #(CORE_CLK_6) cpu_clk_en(.ref_clk(~clk_sys), .cen(cen_6), .clk());
 
-wire dbg = mcpu_ab == 16'h0B7E;
-
 reg sirq_n1;
 reg [7:0] data_latch;
 always @(posedge clk_sys) begin
