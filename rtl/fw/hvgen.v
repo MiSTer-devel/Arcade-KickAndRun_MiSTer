@@ -16,16 +16,16 @@ always @(posedge clk_sys) begin
     ce_pix <= 1'b1;
     hcount <= hcount + 9'd1;
     case (hcount)
-      10: hb <= 1'b0;
-      250: hb <= 1'b1;
+      9: hb <= 1'b0;
+      249: hb <= 1'b1;
       308: hs <= 1'b0;
       340: hs <= 1'b1;
       383: begin
         vcount <= vcount + 9'd1;
         hcount <= 9'b0;
         case (vcount)
-          16: vb <= 1'b0;
-          240: vb <= 1'b1;
+          15: vb <= 1'b0;
+          239: vb <= 1'b1;
           258: vs <= 1'b0;
           260: vs <= 1'b1;
           263: vcount <= 9'd0;
