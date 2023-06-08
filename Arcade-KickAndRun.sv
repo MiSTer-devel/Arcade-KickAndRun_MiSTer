@@ -203,6 +203,9 @@ wire [1:0] ar = status[122:121];
 localparam CONF_STR = {
   "KickAndRun;;",
   "-;",
+  "O[122:121],Aspect ratio,Original,Full Screen,[ARC1],[ARC2];",
+  "OFH,Scandoubler Fx,None,HQ2x,CRT 25%,CRT 50%,CRT 75%;",
+  "-;",
   "DIP;",
   "-;",
   "T[0],Reset;",
