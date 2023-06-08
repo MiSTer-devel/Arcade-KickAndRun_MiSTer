@@ -1,5 +1,6 @@
 <misterromdescription>
     <name>Kick And Run</name>
+    <setname>kicknrun</setname>
     <homebrew>no</homebrew>
     <bootleg>no</bootleg>
     <series></series>
@@ -15,7 +16,7 @@
     <joystick>4-way</joystick>
     <special_controls></special_controls>
     <num_buttons>2</num_buttons>
-    <buttons names="Button1,Button2,Start1P,Start2P,CoinA,CoinB" default="A,B,Start,Select,R1,R2"></buttons>
+    <buttons names="Button 1,Button 2,Start 1P,Start 2P,Coin A,Coin B" default="A,B,Start,Select,R1,R2"></buttons>
     <switches default="ff,ff">
         <dip bits="0" name="Mode" ids="Slave,Master"/>
         <dip bits="3" name="Demo Sounds" ids="Off,On"/>
