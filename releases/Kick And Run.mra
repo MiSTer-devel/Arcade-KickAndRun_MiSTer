@@ -1,5 +1,6 @@
 <misterromdescription>
     <name>Kick And Run</name>
+    <mameversion>0288</mameversion>
     <setname>kicknrun</setname>
     <homebrew>no</homebrew>
     <bootleg>no</bootleg>
